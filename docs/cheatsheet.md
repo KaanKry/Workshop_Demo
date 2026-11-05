@@ -50,9 +50,29 @@ git branch -D yourname/short-desc
 ## Update my branch with the latest `main`
 
 ```bash
+# merge
 git pull upstream main
 git push
+
+# or rebase (own branches only! See docs/rebase-guide.md)
+git fetch upstream
+git rebase upstream/main
+git push --force-with-lease
 ```
+
+## Rebase
+
+| Command | What it does |
+|---------|--------------|
+| `git rebase upstream/main` | replay my commits on top of the latest main |
+| `git rebase --continue` | after fixing a conflict and `git add` |
+| `git rebase --abort` | cancel, back to before the rebase |
+| `git rebase -i upstream/main` | tidy my commits (squash, reword, drop) |
+| `git push --force-with-lease` | push a rebased branch (never `--force`, never on `main`) |
+| `git reset --hard ORIG_HEAD` | undo a rebase that just finished |
+| `git reflog` | everywhere my branch has been, to recover anything |
+
+During a rebase conflict, **top = main**, **bottom = my commit** (the opposite of a merge).
 
 ## Conflicts
 
@@ -108,3 +128,5 @@ git push
 | **clone** | download a repo to your computer |
 | **pull request (PR)** | a request to merge your branch, with review and tests |
 | **merge conflict** | two people changed the same lines; you decide what to keep |
+| **rebase** | move your branch's commits on top of the latest main (they get new IDs) |
+| **force-with-lease** | a safe force-push: overwrite *your* branch only if nobody else pushed to it |

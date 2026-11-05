@@ -1,6 +1,6 @@
 # 05 · Tasks ("good first issues")
 
-Small tasks for [Exercise 7](04-exercises.md#exercise-7--fix-a-real-bug-or-add-a-function).
+Small tasks for [Exercise 8](04-exercises.md#exercise-8--fix-a-real-bug-or-add-a-function).
 **One task = one branch = one pull request.** Each task has an issue on GitHub.
 Comment *"I'll take this"* first, so two people don't do the same one.
 
@@ -32,7 +32,8 @@ The file to change is `ecotrack/cli.py`. *Hint:* `len(lap_times)`.
 ### T4 🟡 Show the slowest lap
 
 Print `Slowest lap:  4:11.84` in the summary. This needs **T2** to be merged first.
-When it is, run `git pull upstream main` on your branch to get it.
+When it is, update your branch to get it, with `git pull upstream main` or,
+even better, `git fetch upstream && git rebase upstream/main`.
 (Waiting for someone else's work is normal in a team!)
 
 ### T5 🟢 Don't crash on zero energy

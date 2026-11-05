@@ -4,6 +4,7 @@ Welcome to Team H2politO! This repository is a **practice playground** where
 you'll learn:
 
 - the basics of **git**: commits, history, and **branches** (one branch per feature)
+- keeping a branch up to date with **merge** and **rebase**
 - **how we work as a team** (trunk-based development)
 - **GitHub**: forking, protecting `main`, and opening **pull requests**
 
@@ -38,7 +39,8 @@ Stuck? Come 15 minutes early and we'll fix it together.
 | 10 min | Not committing the wrong files | [.gitignore guide](docs/gitignore-guide.md) |
 | 10 min | How we work: trunk-based development | [02 · Trunk-based development](docs/02-trunk-based-development.md) |
 | 20 min | GitHub: forks, protected `main`, pull requests | [03 · GitHub workflow](docs/03-github-workflow.md) |
-| 75 min | Hands-on exercises | [04 · Exercises](docs/04-exercises.md) + [05 · Tasks](docs/05-tasks.md) |
+| 10 min | Rebase: keeping your branch up to date | [Rebase guide](docs/rebase-guide.md) |
+| 90 min | Hands-on exercises | [04 · Exercises](docs/04-exercises.md) + [05 · Tasks](docs/05-tasks.md) |
 | 10 min | Wrap-up and questions | [Cheatsheet](docs/cheatsheet.md) |
 
 Keep the **[cheatsheet](docs/cheatsheet.md)** open in a tab.

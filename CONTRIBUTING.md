@@ -11,7 +11,10 @@ The rules are the same ones we use for the real car software.
 4. **Every change goes through a pull request (PR).** Another person reviews
    it, and the automatic tests must be green ✅.
 5. **Stay up to date.** Before starting a branch, update `main`. If `main`
-   changes while you work, pull it into your branch.
+   changes while you work, bring it into your branch, either with
+   `git pull upstream main` or by rebasing
+   (`git fetch upstream && git rebase upstream/main && git push --force-with-lease`).
+   Only ever rebase **your own** branches, never `main`.
 
 ## Branch names
 

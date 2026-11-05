@@ -145,12 +145,18 @@ git push
 
 ### 7. If `main` changed in the meantime
 
-If GitHub says *"This branch is out-of-date"* or *"This branch has conflicts"*:
+If GitHub says *"This branch is out-of-date"* or *"This branch has conflicts"*,
+bring the latest `main` into your branch in one of two ways:
 
 ```bash
-git pull upstream main     # bring the latest main into your branch
-# if there's a conflict, fix it (see Exercise 5)
+# Merge (see Exercise 5)
+git pull upstream main
 git push
+
+# or rebase (see Exercise 7 and the rebase guide)
+git fetch upstream
+git rebase upstream/main
+git push --force-with-lease
 ```
 
 ### 8. Merge and clean up

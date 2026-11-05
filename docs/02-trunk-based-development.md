@@ -46,23 +46,32 @@ it's merged into `main` and deleted.
 
 ## Keeping your branch up to date
 
-While you work on your branch, other people merge into `main`. To bring their
-changes into your branch:
+While you work on your branch, other people merge into `main`. There are two
+ways to bring their changes into your branch (you'll set up `upstream` in the exercises):
 
 ```bash
-git pull upstream main      # (you'll set up "upstream" in the exercises)
+# Option 1, merge: simplest
+git pull upstream main
 git push
+
+# Option 2, rebase: your commits move on top of the latest main, giving a straight history
+git fetch upstream
+git rebase upstream/main
+git push --force-with-lease
 ```
 
+Rebase fits trunk-based development well. Your branch always looks as if it was
+started from today's `main`, so reviews are easier and history stays readable.
+See the **[rebase guide](rebase-guide.md)**.
+
 If git says there's a **conflict**, you and someone else changed the same
-lines. You'll practise fixing that in [Exercise 5](04-exercises.md#exercise-5--fix-a-merge-conflict).
+lines. You'll practise fixing that in [Exercise 5](04-exercises.md#exercise-5--fix-a-merge-conflict) (merge)
+and [Exercise 7](04-exercises.md#exercise-7--rebase-your-branch) (rebase).
 
 ## Going further (not needed today)
 
 - **Feature flags:** a big feature that takes weeks is merged in small pieces,
   hidden behind an on/off switch, so `main` keeps working.
-- **Rebase:** an alternative to `git pull` that keeps your branch's history
-  tidier. Learn it once you're comfortable with branches.
 - **GitFlow:** a different, heavier style with `develop` and `release`
   branches. You may meet it in other companies.
 

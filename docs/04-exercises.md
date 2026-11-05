@@ -14,7 +14,8 @@ your first name, for example `giulia`.
 | 4 | Your first pull request | branch → commit → push → PR → review |
 | 5 | Fix a merge conflict | conflicts, `git pull upstream main` |
 | 6 | Two features, two branches | **one branch per feature**, switching branches |
-| 7 | Fix a real bug or add a function | the full workflow on real code |
+| 7 | Rebase your branch | `git rebase`, conflicts during a rebase, `--force-with-lease` |
+| 8 | Fix a real bug or add a function | the full workflow on real code |
 
 ---
 
@@ -255,7 +256,101 @@ a mentor that switching branches changes which files you see.
 
 ---
 
-## Exercise 7 · Fix a real bug or add a function
+## Exercise 7 · Rebase your branch
+
+Read the **[rebase guide](rebase-guide.md)** first (10 min). Then practise in
+three parts. Everything here stays on your fork, and no PR is needed.
+
+### Part A · Catch up with `main`
+
+Pretend you started a branch a while ago: create it from an **old** point of
+`main` (3 commits back), and make one commit.
+
+```bash
+git fetch upstream
+git switch -c yourname/rebase-practice upstream/main~3
+echo "rebase practice" > practice-yourname.txt
+git add practice-yourname.txt
+git commit -m "Add rebase practice file"
+git push -u origin yourname/rebase-practice
+```
+
+Look at the picture: your branch goes off to the side, and `main` has moved on.
+
+```bash
+git log --oneline --graph yourname/rebase-practice upstream/main
+```
+
+Write down the ID of your commit (`git log --oneline -1`), then rebase:
+
+```bash
+git rebase upstream/main
+git log --oneline --graph yourname/rebase-practice upstream/main
+git log --oneline -1
+```
+
+Your commit now sits **on top of** `main` in a straight line, and it has a **new ID**.
+
+### Part B · Push a rebased branch
+
+```bash
+git push
+```
+
+Refused (`non-fast-forward`)! GitHub still has your *old* commit. Replace it:
+
+```bash
+git push --force-with-lease
+```
+
+### Part C · A conflict during a rebase
+
+Make two branches that change the **same line**:
+
+```bash
+git switch -c drill-a upstream/main
+# edit the FIRST line of README.md to:  # Drill A
+git commit -am "Drill A title"
+
+git switch -c drill-b upstream/main
+# edit the FIRST line of README.md to:  # Drill B
+git commit -am "Drill B title"
+
+git rebase drill-a        # 💥 CONFLICT in README.md
+```
+
+Open `README.md`. Remember: **top = the branch you rebase onto (drill-a)**,
+**bottom = your commit (drill-b)**. Keep one title, delete the marker lines, save, then:
+
+```bash
+git add README.md
+git rebase --continue     # not "git commit"!
+git log --oneline -3      # Drill B now sits on top of Drill A
+```
+
+(Want to start over? `git rebase --abort`.)
+
+### Clean up
+
+```bash
+git switch main
+git branch -D yourname/rebase-practice drill-a drill-b
+git push origin --delete yourname/rebase-practice
+```
+
+**Bonus:** make 3 small commits on a new branch (`Add x`, `fix typo`, `oops`),
+then squash them into one with `git rebase -i upstream/main`
+(see [section 5 of the guide](rebase-guide.md#5--tidy-up-your-commits-interactive-rebase)).
+
+✅ **Checkpoint:** you can explain what rebase does, why the commit ID changed,
+why the push needed `--force-with-lease`, and why you never rebase `main`.
+
+> From now on, you can update any of **your** branches either way:
+> `git pull upstream main` (merge) or `git fetch upstream && git rebase upstream/main` (rebase).
+
+---
+
+## Exercise 8 · Fix a real bug or add a function
 
 Pick a task from **[05-tasks.md](05-tasks.md)**. Find its issue on GitHub and comment
 *"I'll take this"*. **T1** (the lap time bug) is a great first one.

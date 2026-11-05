@@ -94,7 +94,9 @@ python3 scripts/create_issues.py --repo H2politO/git-workshop
 | Ex. 1–3 | Common problems: HTTPS clone, PR opened against the fork instead of upstream |
 | Ex. 4–5 | **Merge CONTRIBUTORS PRs in waves** (merge 3, pause, merge 3…), so most people hit a real conflict in Ex. 5 |
 | Ex. 6 | Check that the two PRs are **separate** and each contains one file. A PR with both files means the second branch was created from the first instead of from `main`. Good teaching moment |
-| Ex. 7 | Mentors review. Push back (kindly) on PRs that do two things: "split it into two branches" |
+| Rebase talk | Draw the before/after picture on the whiteboard. Hammer two points: commit IDs change, and **never rebase `main`**. Live-demo a rebase conflict and point out that top/bottom are flipped compared with a merge |
+| Ex. 7 | Needs `upstream/main~3` to exist, which is guaranteed by the repo's own history. Common problems: typing `git commit` instead of `git rebase --continue`, `--force` instead of `--force-with-lease`, landing in vim during `rebase -i` |
+| Ex. 8 | Mentors review. Push back (kindly) on PRs that do two things: "split it into two branches" |
 | Wrap-up | Show `git log --oneline` on upstream: a clean history built by the whole room |
 
 ## 5 · Common problems
@@ -111,6 +113,9 @@ python3 scripts/create_issues.py --repo H2politO/git-workshop
 | CI never starts on the PR | First-time contributor: click **Approve and run** |
 | `git switch` refuses: "changes would be overwritten" | Uncommitted work: commit it (or `git stash`) first |
 | `git branch -d` says "not fully merged" | Expected after a squash merge: use `-D` |
+| Push rejected `non-fast-forward` after a rebase | Expected: `git push --force-with-lease` |
+| "You are currently rebasing" and they're lost | `git status` explains where they are; `git rebase --abort` resets to safety |
+| A rebase went wrong after it finished | `git reset --hard ORIG_HEAD`, or find the old commit with `git reflog` |
 | Stuck in vim | `Esc` `:wq` `Enter`, then set `core.editor` |
 | `python3: command not found` (Windows) | Use `python` instead |
 
