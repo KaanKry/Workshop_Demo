@@ -1,0 +1,48 @@
+# What NOT to commit. See docs/gitignore-guide.md for the why.
+
+# --- Python ---------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Tool caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# --- Secrets ----------------------------------------------------------------
+# Real values live in .env (never committed). .env.example with fake values is fine.
+.env
+.env.*
+!.env.example
+
+# --- Editors and OS (safety net: better in your GLOBAL ignore file) ----------
+# VS Code: personal settings stay local, extension recommendations are shared
+.vscode/*
+!.vscode/extensions.json
+*.code-workspace
+
+# JetBrains (PyCharm, CLion)
+.idea/
+
+# Vim / Emacs
+*.swp
+*.swo
+*~
+
+# Jupyter
+.ipynb_checkpoints/
+
+# macOS / Windows
+.DS_Store
+Thumbs.db
+desktop.ini
