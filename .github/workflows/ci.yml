@@ -1,0 +1,32 @@
+# CI = Continuous Integration. GitHub runs the tests automatically on every
+# pull request, so a change that breaks something can't be merged.
+# The job is called "test": that's the name you pick as a *required status
+# check* when you protect the main branch.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install pytest
+        run: pip install pytest
+
+      - name: Run the tests
+        run: pytest -v
+
+      - name: Run the program on the sample data
+        run: python -m ecotrack data/sample_laps.csv
