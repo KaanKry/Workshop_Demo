@@ -4,7 +4,7 @@
 
 ```mermaid
 flowchart LR
-    U["🏢 <b>upstream</b><br/>H2politO/git-workshop<br/>(the team's repo)"]
+    U["🏢 <b>upstream</b><br/>ozaydincan/Workshop_Demo<br/>(the team's repo)"]
     O["👤 <b>origin</b><br/>YOU/git-workshop<br/>(your fork)"]
     L["💻 <b>your laptop</b>"]
 
@@ -37,15 +37,15 @@ Clone **your fork** and tell git where upstream is:
 ```bash
 git clone git@github.com:YOU/git-workshop.git
 cd git-workshop
-git remote add upstream git@github.com:H2politO/git-workshop.git
+git remote add upstream git@github.com:ozaydincan/Workshop_Demo.git
 git remote -v
 ```
 
 ```
 origin    git@github.com:YOU/git-workshop.git (fetch)
 origin    git@github.com:YOU/git-workshop.git (push)
-upstream  git@github.com:H2politO/git-workshop.git (fetch)
-upstream  git@github.com:H2politO/git-workshop.git (push)
+upstream  git@github.com:ozaydincan/Workshop_Demo.git (fetch)
+upstream  git@github.com:ozaydincan/Workshop_Demo.git (push)
 ```
 
 ## Protecting `main`
@@ -121,7 +121,7 @@ After pushing, your fork's page on GitHub shows a yellow banner:
 **"Compare & pull request"**. Click it and check the line at the top:
 
 ```
-base repository: H2politO/git-workshop   base: main   ←   head repository: YOU/git-workshop   compare: yourname/fix-lap-format
+base repository: ozaydincan/Workshop_Demo   base: main   ←   head repository: YOU/git-workshop   compare: yourname/fix-lap-format
 ```
 
 Write a short title and description (`Closes #3` if it fixes issue 3) → **Create pull request**.

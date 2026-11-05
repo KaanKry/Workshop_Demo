@@ -2,8 +2,8 @@
 
 Facilitator only. Requires the GitHub CLI (`gh`), logged in with `gh auth login`.
 
-    python scripts/create_issues.py --repo H2politO/git-workshop --dry-run
-    python scripts/create_issues.py --repo H2politO/git-workshop
+    python scripts/create_issues.py --repo ozaydincan/Workshop_Demo --dry-run
+    python scripts/create_issues.py --repo ozaydincan/Workshop_Demo
 """
 
 import argparse
@@ -32,7 +32,7 @@ def parse_tasks(text: str) -> list[tuple[str, str]]:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("--repo", required=True, help="OWNER/REPO, e.g. H2politO/git-workshop")
+    parser.add_argument("--repo", required=True, help="OWNER/REPO, e.g. ozaydincan/Workshop_Demo")
     parser.add_argument("--dry-run", action="store_true", help="print, don't create")
     args = parser.parse_args()
 

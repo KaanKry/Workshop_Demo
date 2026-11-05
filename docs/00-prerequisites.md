@@ -262,15 +262,15 @@ Then run `ssh -T git@github.com` again.
 **Cloning** downloads a copy of a repository, including its entire history, to
 your computer.
 
-1. Open the repository on GitHub, for example <https://github.com/H2politO/git-workshop>
+1. Open the repository on GitHub, for example <https://github.com/ozaydincan/Workshop_Demo>
 2. Click the green **`<> Code`** button → **SSH** tab → copy the URL
-   (it looks like `git@github.com:H2politO/git-workshop.git`)
+   (it looks like `git@github.com:ozaydincan/Workshop_Demo.git`)
 3. In the terminal, go to the folder where you keep projects and clone:
 
 ```bash
 mkdir -p ~/projects
 cd ~/projects
-git clone git@github.com:H2politO/git-workshop.git
+git clone git@github.com:ozaydincan/Workshop_Demo.git
 cd git-workshop
 ```
 

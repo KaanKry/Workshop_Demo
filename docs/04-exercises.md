@@ -21,14 +21,14 @@ your first name, for example `giulia`.
 
 ## Exercise 1 · Fork, clone, connect
 
-1. Open <https://github.com/H2politO/git-workshop> and click **Fork** → **Create fork**.
+1. Open <https://github.com/ozaydincan/Workshop_Demo> and click **Fork** → **Create fork**.
 2. Clone **your fork** (SSH URL!) and add the team repo as `upstream`:
 
    ```bash
    cd ~/projects
    git clone git@github.com:YOU/git-workshop.git
    cd git-workshop
-   git remote add upstream git@github.com:H2politO/git-workshop.git
+   git remote add upstream git@github.com:ozaydincan/Workshop_Demo.git
    ```
 
 3. Run the program:
@@ -112,7 +112,7 @@ Add your name to [`CONTRIBUTORS.md`](../CONTRIBUTORS.md).
    ```
 
 4. On GitHub, click **Compare & pull request**. Check that the base is
-   **`H2politO/git-workshop` · `main`**, then **Create pull request**.
+   **`ozaydincan/Workshop_Demo` · `main`**, then **Create pull request**.
 5. **Review a neighbour:** open someone else's PR → **Files changed** → click the
    `+` next to a line → leave a friendly comment.
 

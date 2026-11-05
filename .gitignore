@@ -24,7 +24,7 @@ htmlcov/
 .env
 .env.*
 !.env.example
-docswfacilitator-guide.md
+docs/facilitator-guide.md
 
 # --- Editors and OS (safety net: better in your GLOBAL ignore file) ----------
 # VS Code: personal settings stay local, extension recommendations are shared

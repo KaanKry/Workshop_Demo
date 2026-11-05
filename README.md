@@ -1,4 +1,4 @@
-# H2politO Git Workshop 🚗💨
+# H2politO Git Workshop 
 
 Welcome to Team H2politO! This repository is a **practice playground** where
 you'll learn:
@@ -18,7 +18,7 @@ experiment freely.
 
 ---
 
-## 📋 Before the workshop (at home, ~30 min)
+## Before the workshop (at home, ~30 min)
 
 Complete **[docs/00-prerequisites.md](docs/00-prerequisites.md)**:
 
@@ -30,7 +30,7 @@ Complete **[docs/00-prerequisites.md](docs/00-prerequisites.md)**:
 
 Stuck? Come 15 minutes early and we'll fix it together.
 
-## 🗺️ Workshop agenda
+##  Workshop agenda
 
 | Time   | Topic | Material |
 |--------|-------|----------|
@@ -45,7 +45,7 @@ Stuck? Come 15 minutes early and we'll fix it together.
 
 Keep the **[cheatsheet](docs/cheatsheet.md)** open in a tab.
 
-## 🐍 The project
+##  The project
 
 ```text
 .
@@ -65,7 +65,7 @@ Run it from this folder:
 python3 -m ecotrack data/sample_laps.csv      # on Windows: python -m ecotrack data/sample_laps.csv
 ```
 
-Look closely at the output. Something is wrong… 👀 (That's task T1 in
+Look closely at the output. Something is wrong…  (That's task T1 in
 [docs/05-tasks.md](docs/05-tasks.md).)
 
 <details>
@@ -80,10 +80,6 @@ python3 -m pytest
 ```
 </details>
 
-## 🤝 Contributing
+## Contributing
 
 Read **[CONTRIBUTING.md](CONTRIBUTING.md)**. It's short.
-
-## 🧑‍🏫 Running the workshop?
-
-See **[docs/facilitator-guide.md](docs/facilitator-guide.md)**.
